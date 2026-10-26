@@ -1,0 +1,17 @@
+[project]
+name = "retail-sales-analytics"
+version = "1.0.0"
+description = "Retail Sales Analytics & AI Insights (Streamlit in Snowflake)"
+requires-python = ">=3.11"
+dependencies = [
+    "snowflake-connector-python>=3.3.0",
+    "snowflake-snowpark-python>=1.20.0",
+    "streamlit>=1.50.0",
+    "pandas>=2.0",
+    "numpy>=1.26",
+    "plotly>=5.20",
+    "reportlab>=4.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "pypdf>=4"]

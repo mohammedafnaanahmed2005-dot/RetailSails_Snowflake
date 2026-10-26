@@ -1,0 +1,32 @@
+definition_version: 2
+# Warehouse runtime: packages come from the Snowflake Anaconda channel (environment.yml).
+# The container runtime would need a PyPI external access integration, which trial
+# accounts do not support. On a paid account you can switch to:
+#   runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
+#   compute_pool: SYSTEM_COMPUTE_POOL_CPU
+#   external_access_integrations: [PYPI_ACCESS_INTEGRATION]
+# and ship pyproject.toml instead of environment.yml.
+entities:
+  retail_sales_app:
+    type: streamlit
+    identifier:
+      name: RETAIL_SALES_APP
+      database: RETAIL_ANALYTICS
+      schema: SALES
+    title: Retail Sales Analytics & AI Insights
+    query_warehouse: RETAIL_WH
+    main_file: streamlit_app.py
+    stage: APP_STAGE
+    artifacts:
+      - streamlit_app.py
+      - environment.yml
+      - src/__init__.py
+      - src/snowflake_connection.py
+      - src/analytics.py
+      - src/validation.py
+      - src/data_loader.py
+      - src/scenarios.py
+      - src/forecasting.py
+      - src/recommendations.py
+      - src/ai_assistant.py
+      - src/report_generator.py
